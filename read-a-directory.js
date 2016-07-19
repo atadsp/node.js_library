@@ -9,4 +9,13 @@ fs.realpath(__dirname, function(err, path){
 		return;
 	}
 	console.log('realpath async: ' + path);
-})
+});
+
+out =fs.realpathSync(__dirname);
+console.log('real path sync', out);
+
+fs.stat(__dirname, function(err, contents){
+	if (err) return;
+
+		console.log(contents);
+});
